@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="icon" href="data:," />
+    <title>Sobrevive a la UAO · AR</title>
+    <!-- Josefin Sans (textos), como en la web; Jersey 25 (pixel) va en public/fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- sin bloquear la página: si la red no deja llegar a Google, se usa la letra del sistema -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <style>
+      @font-face {
+        font-family: 'Jersey 25';
+        src: url('./fonts/jersey-25-latin-400-normal.woff2') format('woff2');
+      }
+      body {
+        margin: 0;
+        background: #0d0d10;
+        color: #fff;
+        font-family: 'Josefin Sans', system-ui, sans-serif;
+      }
+      #entry {
+        position: fixed;
+        inset: 0;
+        z-index: 10;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        background: rgba(13, 13, 16, 0.75);
+      }
+      body.in-xr #entry {
+        display: none;
+      }
+      .card {
+        max-width: 520px;
+        padding: 28px;
+        background: rgba(22, 22, 27, 0.94);
+        clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+      }
+      .kicker {
+        margin: 0;
+        font-family: 'Jersey 25', monospace;
+        font-size: 26px;
+        color: #ffb020;
+      }
+      h1 {
+        margin: 4px 0 12px;
+        font-family: 'Jersey 25', monospace;
+        font-size: 56px;
+        font-weight: 400;
+        line-height: 1;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.45;
+      }
+      button {
+        width: 100%;
+        margin-top: 12px;
+        padding: 14px;
+        border: 0;
+        background: #ff051e;
+        color: #fff;
+        font-family: 'Jersey 25', monospace;
+        font-size: 34px;
+        cursor: pointer;
+        clip-path: polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px);
+      }
+      button:hover {
+        background: #ff3b4e;
+      }
+      button:disabled {
+        background: #33333d;
+      }
+      body:not(.ready) button {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+      .note {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-Bb0V-G9L.js"></script>
+  </head>
+  <body>
+    <div id="scene-container"></div>
+    <div id="entry">
+      <div class="card">
+        <p class="kicker">Realidad aumentada · Meta Quest 3</p>
+        <h1>Sobrevive a la UAO</h1>
+        <p>Ubica los sótanos de la UAO en tu espacio y ayuda a tu personaje a salir de un incendio.</p>
+        <button id="enter-ar" type="button">Cargando…</button>
+        <p id="load-note" class="note">Descargando el juego (unos 2 MB)…</p>
+        <p id="support-note" class="note" style="color: #ffb020"></p>
+        <p id="ua-note" class="note" style="font-size: 11px; opacity: 0.6"></p>
+        <p class="note">Usa las manos: apunta y pellizca (índice y pulgar) para elegir. Juega de pie, o sentado frente a una mesa.</p>
+      </div>
+    </div>
+  </body>
+</html>
