@@ -70,6 +70,9 @@
       button:hover {
         background: #ff3b4e;
       }
+      button:disabled {
+        background: #33333d;
+      }
       body:not(.ready) button {
         pointer-events: none;
         opacity: 0.5;
@@ -79,7 +82,7 @@
         color: rgba(255, 255, 255, 0.7);
       }
     </style>
-    <script type="module" crossorigin src="./assets/index-DssoZ8eH.js"></script>
+    <script type="module" crossorigin src="./assets/index-B8hYZFEH.js"></script>
   </head>
   <body>
     <div id="scene-container"></div>
@@ -89,6 +92,8 @@
         <h1>Sobrevive a la UAO</h1>
         <p>Ubica los sótanos de la UAO en tu espacio y ayuda a tu personaje a salir de un incendio.</p>
         <button id="enter-ar" type="button">Entrar en AR</button>
+        <p id="support-note" class="note" style="color: #ffb020"></p>
+        <p id="ua-note" class="note" style="font-size: 11px; opacity: 0.6"></p>
         <p class="note">Usa las manos: apunta y pellizca (índice y pulgar) para elegir. Juega de pie, o sentado frente a una mesa.</p>
       </div>
     </div>
